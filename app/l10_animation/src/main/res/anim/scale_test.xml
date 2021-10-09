@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<scale xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fromXScale="0"
+    android:toXScale="1.5"
+    android:fromYScale="0"
+    android:toYScale="1"
+    android:pivotX="100%"
+    android:pivotY="100%">
+</scale>
+<!--宽度从0.0到1.5，高度从0到1，延迟1s开始，持续3s，中心点为右下角，最终固定-->
