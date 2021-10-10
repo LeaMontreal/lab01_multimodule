@@ -3,7 +3,9 @@ package com.wlj.l10_animation;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.RotateAnimation;
@@ -21,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.e("TAG", "onCreate()");
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -28,6 +32,36 @@ public class MainActivity extends AppCompatActivity {
         btn_xml_scale = findViewById(R.id.btn_xml_scale);
         iv_animation = findViewById(R.id.iv_animation);
         tv_animation_info = findViewById(R.id.tv_animation_info);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.e("TAG", "onStart()");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.e("TAG", "onResume()");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.e("TAG", "onPause()");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.e("TAG", "onStop()");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.e("TAG", "onDestroy()");
     }
 
     /*
@@ -126,5 +160,64 @@ public class MainActivity extends AppCompatActivity {
         // 4) 启动动画
         iv_animation.startAnimation(animation);
     }
+
+    /*
+     * 3.1 编码实现 透明度动画
+     * 0完全透明 1完全不透明
+     * */
+    public void codeAnimationAlpha(View view){
+        tv_animation_info.setText("编码实现 透明度动画\n" +
+                "从完全透明到完全不透明，持续3s");
+
+        // 1)创建动画对象
+        AlphaAnimation animation = new AlphaAnimation(0, 1);
+        // 2)设置动画行为
+        animation.setDuration(3000);
+        // 3)启动动画
+        iv_animation.startAnimation(animation);
+    }
+
+    /*
+     * 3.2 xml实现 透明度动画
+     * 0完全透明 1完全不透明
+     * */
+    public void xmlAnimationAlpha(View view){
+        tv_animation_info.setText("编码实现 透明度动画\n" +
+                "从完全不透明到完全透明，持续5s");
+
+        // 1)加载动画资源文件，获得动画对象
+        Animation animation = AnimationUtils.loadAnimation(this, R.anim.alpha_test);
+        // 2)设置动画行为
+        animation.setDuration(5000);
+        animation.setFillAfter(true);   // 结束时停留在最后那个状态（即透明）；默认是结束动画，显示图片
+        // 3)启动动画
+        iv_animation.startAnimation(animation);
+
+    }
+
+    /*
+     * 4.1 编码实现 平移动画
+     *
+     * */
+    public void codeAnimationTranslate(View view){}
+
+    /*
+     * 4.2 xml实现 平移动画
+     *
+     * */
+    public void xmlAnimationTranslate(View view){}
+
+    /*
+     * 5.1 编码实现 复合动画
+     *
+     * */
+    public void codeAnimationSet(View view){}
+
+    /*
+     * 4.2 xml实现 复合动画
+     *
+     * */
+    public void xmlAnimationSet(View view){}
+
 
 }
