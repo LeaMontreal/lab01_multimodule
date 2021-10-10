@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">L02_Activity</string>
+    <string name="greeting_msg">Welcome to go with wlj</string>
+    <string name="label_btn_greet">Hello</string>
+    <string name="label_btn_listener">监听方式一</string>
+    <string name="label_btn_ask_question">我要提问</string>
+    <!--通用的标签，为了标识button被点击的动作开始执行了-->
+    <string name="label_btn_common_onclick">Execute onClick</string>
+
+    <string name="label_btn_return_noreply">Return</string>
+    <string name="label_btn_return_withreply">I have more request</string>
+
+    <string name="hint_et_user_msg">Please enter your question</string>
+
+</resources>
