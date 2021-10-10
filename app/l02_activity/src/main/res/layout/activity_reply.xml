@@ -29,17 +29,17 @@
             android:hint="@string/hint_et_user_msg" />
 
         <Button
-            android:id="@+id/btn_return_noreply"
+            android:id="@+id/btn_return_noReply"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="return_noreply"
-            android:text="@string/label_btn_return_noreply" />
+            android:onClick="return_noReply"
+            android:text="@string/label_btn_return_noReply" />
 
         <Button
-            android:id="@+id/btn_return_withreply"
+            android:id="@+id/btn_return_withReply"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="return_withreply"
-            android:text="@string/label_btn_return_withreply" />
+            android:onClick="return_withReply"
+            android:text="@string/label_btn_return_withReply" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

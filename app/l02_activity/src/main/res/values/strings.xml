@@ -7,8 +7,8 @@
     <!--通用的标签，为了标识button被点击的动作开始执行了-->
     <string name="label_btn_common_onclick">Execute onClick</string>
 
-    <string name="label_btn_return_noreply">Return</string>
-    <string name="label_btn_return_withreply">I have more request</string>
+    <string name="label_btn_return_noReply">Return</string>
+    <string name="label_btn_return_withReply">I have more request</string>
 
     <string name="hint_et_user_msg">Please enter your question</string>
 
