@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">L04_DataStorage</string>
+    <string name="main_name">Data Storage Hands-on</string>
+    <string name="label_btn_sp">SharedPreference Storage</string>
+    <string name="label_btn_innerfile">Inner file Storage</string>
+    <string name="label_btn_externalfile">External Storage</string>
+    <string name="label_btn_database">Database Storage</string>
+    <string name="label_btn_network">Network Storage</string>
+
+    <string name="text_key">Key</string>
+    <string name="text_value">Value</string>
+    <string name="hint_et_key">Please input key</string>
+    <string name="hint_et_value">Please input value</string>
+
+    <string name="label_btn_read">Read</string>
+    <string name="label_btn_Save">Save</string>
+
+    <!--在DBStorageActivity中使用的String-->
+    <string name="label_btn_create_db">Create DB</string>
+    <string name="label_btn_update_db">Update DB</string>
+    <string name="label_btn_insert">Insert Record</string>
+    <string name="label_btn_delete">Delete Record</string>
+    <string name="label_btn_update">Update Record</string>
+    <string name="label_btn_query">Query Record</string>
+    <string name="label_btn_transaction">Test Transaction</string>
+
+    <string name="label_btn_network_get">Test Get</string>
+    <string name="label_btn_network_post">Test Post</string>
+    <string name="hint_network_url">Please input URL</string>
+    <string name="hint_network_url_param">URL parameter</string>
+    <string name="hint_network_response">Response from Web Server</string>
+
+</resources>

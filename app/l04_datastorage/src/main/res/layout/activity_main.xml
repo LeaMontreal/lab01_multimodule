@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="1dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/main_name" />
+
+        <Button
+            android:id="@+id/btn_sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="sharedpreferenceStorage"
+            android:text="@string/label_btn_sp" />
+
+        <Button
+            android:id="@+id/btn_innerfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="innerfileStorage"
+            android:text="@string/label_btn_innerfile" />
+
+        <Button
+            android:id="@+id/btn_externalfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="externalfileStorage"
+            android:text="@string/label_btn_externalfile" />
+
+        <Button
+            android:id="@+id/btn_database"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="databaseStorage"
+            android:text="@string/label_btn_database" />
+
+        <Button
+            android:id="@+id/btn_network"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="networkStorage"
+            android:text="@string/label_btn_network" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

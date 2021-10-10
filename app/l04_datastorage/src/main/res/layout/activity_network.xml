@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NetworkActivity">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/et_network_url"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_network_url"
+            android:inputType="textUri"
+            android:textSize="20sp"/>
+        <EditText
+            android:id="@+id/et_network_url_param"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_network_url_param"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="HttpURLConnection方式：" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_network_get"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="testNetworkGetByHttpURLConnection"
+                android:text="@string/label_btn_network_get" />
+
+            <Button
+                android:id="@+id/btn_network_post"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/cardview_default_elevation"
+                android:layout_weight="1"
+                android:onClick="testNetworkPostByHttpURLConnection"
+                android:text="@string/label_btn_network_post" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="HttpClient方式：" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_network_get_httpClient"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="testNetworkGetByHttpClient"
+                android:text="@string/label_btn_network_get" />
+
+            <Button
+                android:id="@+id/btn_network_post_httpClient"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/cardview_default_elevation"
+                android:layout_weight="1"
+                android:onClick="testNetworkPostByHttpClient"
+                android:text="@string/label_btn_network_post" />
+
+        </LinearLayout>
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Volley方式：" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_network_get_volley"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="testNetworkGetByVolley"
+                android:text="@string/label_btn_network_get" />
+
+            <Button
+                android:id="@+id/btn_network_post_volley"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/cardview_default_elevation"
+                android:layout_weight="1"
+                android:onClick="testNetworkPostByVolley"
+                android:text="@string/label_btn_network_post" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/et_network_response"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/hint_network_response"
+            android:inputType="textMultiLine" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
