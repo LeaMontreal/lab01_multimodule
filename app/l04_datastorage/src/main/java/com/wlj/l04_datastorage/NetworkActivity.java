@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -52,7 +53,7 @@ public class NetworkActivity extends AppCompatActivity {
         // 1. 显示progress dialog
         ProgressDialog dialog = ProgressDialog.show(this, null,"正在请求中...");
 
-        // 2. 启动分线程
+        // 2. 启动分线程，采用方式一，Thread的匿名子类
         new Thread(){
             // 重写run()
             public void run(){
@@ -137,15 +138,15 @@ public class NetworkActivity extends AppCompatActivity {
                 try {
                     // 2) 创建URL对象
                     URL url = new URL(path);
-                    // 3)
+                    // 3) openConnection，得到HttpURLConnection对象
                     HttpURLConnection connection = (HttpURLConnection)url.openConnection();
 
-                    // 4)
+                    // 4) 设置连接的参数
                     connection.setRequestMethod("POST");
                     connection.setConnectTimeout(5000);
                     connection.setReadTimeout(5000);
 
-                    // 5)
+                    // 5) 连接
                     connection.connect();
 
                     // 6) 发请求
@@ -224,11 +225,22 @@ public class NetworkActivity extends AppCompatActivity {
     /*
      * 使用HttpClient方式提交GET请求
      * */
-    public void testNetworkGetByHttpClient(View view){}
+    public void testNetworkGetByHttpClient(View view){
+        Toast.makeText(this, "DefaultHttpClient is deprecated and removed from API level 23",
+                Toast.LENGTH_LONG).show();
+
+        // 从Android 6.0 (API level 23)开始，已经移除了DefaultHttpClient()，不再处理这种方式
+        //new DefaultHttpClient();
+    }
+
     /*
      * 使用HttpClient方式提交POST请求
      * */
-    public void testNetworkPostByHttpClient(View view){}
+    public void testNetworkPostByHttpClient(View view){
+        Toast.makeText(this, "DefaultHttpClient is deprecated and removed from API level 23",
+                Toast.LENGTH_LONG).show();
+
+    }
 
     /*
      * 使用Volley方式提交GET请求
