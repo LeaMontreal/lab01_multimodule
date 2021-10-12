@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">L03_View</string>
+
+    <string name="label_btn_testSimple">测试简单View组件</string>
+    <string name="label_btn_testMenu">测试菜单</string>
+    <string name="label_btn_testProcessBar">测试进度条</string>
+    <string name="label_btn_testDialogue">测试对话框</string>
+    <string name="label_btn_test_listview">测试ListView</string>
+
+    <!--test simple使用的string-->
+    <string name="text_simple_message">这是TextView的内容</string>
+    <string name="text_simple_message_changed">动态修改了的增强版</string>
+    <string name="text_simple_checkbox">Hobby:</string>
+    <string name="label_checkBox_basket">Basket</string>
+    <string name="label_checkBox_football">Football</string>
+    <string name="label_checkBox_pingpong">Pingpong</string>
+    <string name="label_btn_for_checkbox">Submit</string>
+
+
+    <!--test menu使用的string-->
+    <!--字符串换行用\n-->
+    <string name="text_menu_message">1.1 点击 Android 2.3.x (API level 10) or lower手机的Menu按钮显示Options Menu
+        \n1.2点击Android 3.0 (API level 11) and higher手机右上角overflow menu显示Options Menu\n2.长按上方的Button显示Context Menu</string>
+    <string name="btn_menu_contextmenu">显示Context Menu</string>
+    <string name="label_btn_menu_contextmenu">显示Context Menu</string>
+
+    <!--btn_test_listview使用的string-->
+    <string name="text_food_name">food name</string>
+    <string name="text_food_detail">food detail</string>
+
+</resources>

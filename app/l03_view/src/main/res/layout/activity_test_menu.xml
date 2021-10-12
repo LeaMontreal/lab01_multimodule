@@ -1,0 +1,28 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--为了触发不太老的手机的Options Menu，需要在layout中添加一个Toolbar，使用overflow menu-->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
+
+    <Button
+        android:id="@+id/btn_menu_contextmenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/label_btn_menu_contextmenu"
+        android:onClick="promptButtonUse"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/text_menu_message"
+        android:textSize="20sp" />
+
+</LinearLayout>
