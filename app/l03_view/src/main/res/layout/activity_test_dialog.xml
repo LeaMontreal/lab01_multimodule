@@ -41,19 +41,19 @@
             android:onClick="showAlertDialogDefine"/>
 
         <Button
-            android:id="@+id/btn_process_dialog_circle"
+            android:id="@+id/btn_Progress_dialog_circle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="显示圆形进度Process Dialog"
+            android:text="显示圆形进度Progress Dialog"
             android:layout_marginTop="20dp"
-            android:onClick="showProcessDialogCircle"/>
+            android:onClick="showProgressDialogCircle"/>
 
         <Button
-            android:id="@+id/btn_process_dialog_horizontal"
+            android:id="@+id/btn_Progress_dialog_horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="显示水平进度Process Dialog"
-            android:onClick="showProcessDialogHorizontal"/>
+            android:text="显示水平进度Progress Dialog"
+            android:onClick="showProgressDialogHorizontal"/>
 
         <Button
             android:id="@+id/btn_date_picker_dialog"

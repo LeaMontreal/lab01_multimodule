@@ -53,7 +53,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
             case R.id.btn_test_dialogue:
-                Toast.makeText(this, "test_dialogue In developing...", Toast.LENGTH_LONG).show();
+                //Toast.makeText(this, "test_dialogue In developing...", Toast.LENGTH_LONG).show();
+                intent = new Intent(this, TestDialogActivity.class);
+                startActivity(intent);
                 break;
             case R.id.btn_test_listview:
                 startActivity(new Intent(this, TestListviewActivity.class));

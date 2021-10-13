@@ -3,11 +3,19 @@ package com.wlj.l03_view;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
+import android.app.DatePickerDialog;
+import android.app.ProgressDialog;
+import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TimePicker;
 import android.widget.Toast;
+
+import java.util.Calendar;
 
 public class TestDialogActivity extends AppCompatActivity {
 
@@ -92,20 +100,122 @@ public class TestDialogActivity extends AppCompatActivity {
 
     }
 
+    /*
+    * 显示圆形进度对话框
+    * */
+    public void showProgressDialogCircle(View view){    // 回调方法，在主线程执行
+        // 注意这里dialog要加final
+        final ProgressDialog dialog = ProgressDialog.show(this, "数据加载", "数据加载中...");
 
-    public void showProcessDialogCircle(View view){
+        // 模拟一段长时间的操作，然后移除对话框
+        //      长时间的操作要在分线程执行
+        new Thread(new Runnable() {     // 这个新建的Runnable接口在%分线程%执行
+            @Override
+            public void run() {
+                for(int i = 0; i < 20; i++){
+                    try {
+                        // 常用的模拟操作方法，让线程休眠Thread.sleep()
+                        Thread.sleep(200);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+                // 移除对话框
+                dialog.dismiss();
+
+                // 如果想要增加“加载完成”的提示信息，需要在主线程完成
+                // 不能在分线程直接更新UI
+                runOnUiThread(new Runnable() {  // 这个新建的Runnable接口在%主线程%执行
+                    @Override
+                    public void run() {
+                        Toast.makeText(TestDialogActivity.this, "加载完成!!!", Toast.LENGTH_LONG).show();
+                    }
+                });
+            }
+        }).start();
 
     }
 
-    public void showProcessDialogHorizontal(View view){
+    /*
+    * 显示水平进度对话框
+    * */
+    public void showProgressDialogHorizontal(View view){
+        // 创建对象
+        final ProgressDialog dialog = new ProgressDialog(this);
+        // 设置水平样式
+        dialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
 
+        // 显示变化的进度
+        new Thread(){
+            @Override
+            public void run() {
+                int count = 20;
+
+                // 设置最大进度，这样后面setProgress()就可以简单用当前进度+1了
+                dialog.setMax(count);
+
+                for (int i = 0; i < count; i++) {
+                    try {
+                        // 常用的模拟操作方法，让线程休眠Thread.sleep()
+                        Thread.sleep(200);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+
+                    dialog.setProgress(dialog.getProgress() + 1);
+                }
+
+                // 移除对话框
+                dialog.dismiss();
+
+            }
+        }.start();
     }
 
+    /*
+    * 显示日期选择对话框
+    * */
     public void showDatePickerDialog(View view){
+        // 取得当前日期的方式
+        Calendar calendar = Calendar.getInstance();
+        int year = calendar.get(Calendar.YEAR);
+        // 要注意Calendar对象返回的month是不是差1，我在两个模拟器上试的结果都是不需要加1
+        int month = calendar.get(Calendar.MONTH);
+        int dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH);
+        Log.i("TAG", "Today: " + year + "-" + month + "-" + dayOfMonth);
 
+        DatePickerDialog dialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                // 实际开发中在这里要处理用户的日期选择操作，这里简单用输出信息代替了
+                Log.i("TAG", "Set Date: " + year + "-" + month + "-" + dayOfMonth);
+            }
+        }, year,month,dayOfMonth);
+
+        dialog.show();
     }
 
+    /*
+     * 显示时间选择对话框
+     * */
     public void showTimePickerDialog(View view){
+        // 获得当前时间，作为TimePickerDialog的初始显示
+        Calendar calendar = Calendar.getInstance();
+
+        int hourOfDay = calendar.get(Calendar.HOUR_OF_DAY);
+        int minute = calendar.get(Calendar.MINUTE);
+        Log.i("TAG", "Now: " + hourOfDay + ":" + minute);
+
+        TimePickerDialog dialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                // 对时间选择的处理，这里简单用Log信息代替
+                Log.i("TAG", "Set Time: " + hourOfDay + ":" + minute);
+            }
+        }, hourOfDay, minute, true);
+
+        dialog.show();
 
     }
 

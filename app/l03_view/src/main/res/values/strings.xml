@@ -24,6 +24,12 @@
     <string name="btn_menu_contextmenu">显示Context Menu</string>
     <string name="label_btn_menu_contextmenu">显示Context Menu</string>
 
+
+    <string name="test_progress_message">功能需求：\n
+            1. 滑动下面的滑杆后，上面的进度条会同步 \n
+            2. 滑动到最大值时，最上面的进度显示消失</string>
+
+
     <!--btn_test_listview使用的string-->
     <string name="text_food_name">food name</string>
     <string name="text_food_detail">food detail</string>
