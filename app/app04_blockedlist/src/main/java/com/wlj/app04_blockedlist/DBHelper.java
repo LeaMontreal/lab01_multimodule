@@ -13,7 +13,8 @@ public class DBHelper extends SQLiteOpenHelper {
     public DBHelper(@Nullable Context context) {
 
         // 1. 调用父类的构造器创建数据库，提供数据库名和版本号
-        super(context, "iCafe.db", null, 1);
+        // 数据库名是大小写敏感的，我都用小写的，免得把自己整晕了
+        super(context, "icafe.db", null, 1);
     }
 
     // 重写方法，建表

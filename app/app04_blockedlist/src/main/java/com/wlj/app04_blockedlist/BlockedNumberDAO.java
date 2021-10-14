@@ -36,6 +36,10 @@ public class BlockedNumberDAO {
 
         Log.i("TAG", "BlockedNumberDAO add() id=" + rowId);
 
+        // 注意，在add()中就把传入的blockedNumber中的_id改成正确的，
+        // 这样在addBlockedNumber()调用add()后，传入的blockedNumber对象的_id属性就已经是正确的了
+        blockedNumber.setId((int)rowId);
+
         // 3. 关闭资源
         database.close();
     }
@@ -87,7 +91,10 @@ public class BlockedNumberDAO {
 
         //      2.2 数据库查询
         // todo 每个参数的含义还需要仔细读一下
-        Cursor cursor = database.query("blocked_number", null, null, null, null, null, null, null);
+        // orderBy – How to order the rows, formatted as an SQL ORDER BY clause (excluding the ORDER BY itself).
+        // Passing null will use the default sort order, which may be unordered.
+        // orderBy "_id desc"表示按_id降序，就是先显示后插入的黑名单
+        Cursor cursor = database.query("blocked_number", null, null, null, null, null, "_id desc", null);
 
         //      2.3 用Cursor对象遍历所有记录行
         while (cursor.moveToNext()){
