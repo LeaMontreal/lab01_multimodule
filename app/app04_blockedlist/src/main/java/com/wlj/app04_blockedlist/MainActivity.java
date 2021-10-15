@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.MenuItem;
@@ -127,6 +128,8 @@ public class MainActivity extends AppCompatActivity {
                     }
                 })
                 .show();
+
+
     }
 
     //    @Override
@@ -174,6 +177,12 @@ public class MainActivity extends AppCompatActivity {
 
                         // 4、更新界面：刷新ListView显示
                         adapter.notifyDataSetChanged();
+
+                        if(Constant.LOG_INFO){
+                            // 获取当前时间，todo 这两个时间并不一样啊
+                            Log.i("TAG", "Current time by System: " + System.currentTimeMillis());
+                            Log.i("TAG", "Current time by SystemClock: " + SystemClock.uptimeMillis());
+                        }
                     }
                 })
                 .setNegativeButton("Cancel", null)
